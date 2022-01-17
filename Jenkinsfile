@@ -1,7 +1,7 @@
 pipeline {
   agent any
   tools {
-    gradle 'gradle-7.3.3'
+    gradle 'gradle-4.5'
     }
     stages {
       stage('Checkout') {
