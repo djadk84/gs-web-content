@@ -2,6 +2,7 @@ pipeline {
   agent any
   tools {
     gradle 'gradle-4.5.1'
+    java 'java8'
     }
     stages {
       stage('Checkout') {
@@ -13,6 +14,21 @@ pipeline {
         steps {
           sh 'gradle clean compileJava'
           }
+        }
+      stage(Unit-test') {
+        steps {
+          sh 'gradle test'
+          }
+        }
+      stage('Integration-test') {
+        steps {
+          sh 'gradle integrationTest'
+          }
+        }
+      }
+    post {
+      always {
+        junit 'build/test=results/**/TEST-*.xml'
         }
       }
   }
