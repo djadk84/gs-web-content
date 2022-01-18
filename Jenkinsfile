@@ -2,7 +2,7 @@ pipeline {
   agent any
   tools {
     gradle 'gradle-4.5.1'
-    java 'java8'
+    jdk 'java8'
     }
     stages {
       stage('Checkout') {
