@@ -15,7 +15,7 @@ pipeline {
           sh 'gradle clean compileJava'
           }
         }
-      stage(Unit-test') {
+      stage('Unit-test') {
         steps {
           sh 'gradle test'
           }
